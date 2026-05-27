@@ -5,13 +5,13 @@
 body {
     margin: 0;
     min-height: 100vh;
+    padding: 100px 20px 20px;
     font-family: Calibri, sans-serif;
     background: #f4f7fb;
     color: #1f2937;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
 .app {
@@ -50,7 +50,7 @@ org-name {
 main,
 #calculator {
     width: 100%;
-    max-width: 520px;
+    max-width: 500px;
 }
 
 h1 {
@@ -160,6 +160,13 @@ select:focus {
     margin-top: 6px;
     font-size: 14px;
     color: #dc2626;
+}
+
+.results {
+    background: #eff6ff;
+    padding: 18px;
+    border-radius: 14px;
+    margin-top: 24px;
 }
 
 @media (max-width: 480px) {
