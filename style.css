@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Calibri, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app {
+    width: 100%;
+    max-width: 560px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid #000000;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+    gap: 0;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: auto;    /* pushes ALL links to the right as a group */
+}
+
+org-name {
+    font-family:Calibri, serif;
+    font-size: 25px;
+    color: #041d40;
+    white-space: nowrap;
+}
+
+main,
+#calculator {
+    width: 100%;
+    max-width: 520px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: #111827;
+}
+
+#calculator {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.bill,
+.tip-section,
+.people-section {
+    margin-bottom: 22px;
+}
+
+label,
+.tip-section p {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.tip-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.tip-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #e5e7eb;
+    color: #111827;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tip-btn:hover {
+    background: #d1d5db;
+}
+
+.tip-btn.active {
+    background: #2563eb;
+    color: white;
+}
+
+.results {
+    background: #eff6ff;
+    padding: 18px;
+    border-radius: 14px;
+    margin-top: 24px;
+}
+
+.results p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.reset-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #111827;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background: #374151;
+}
+
+.error {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #dc2626;
+}
+
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+        padding: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #calculator {
+        padding: 20px;
+    }
+
+    .tip-buttons {
+        grid-template-columns: 1fr;
+    }
+}

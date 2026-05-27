@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title> Tip Calculator - Dev Weekends Fellowship </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+    <div class="nav-left"> 
+        <span class="navbar">Tip Calculator: Life easy when at table</span>
+    </div>
+    </nav>
+
+    <section id="calculator">
+
+        <div class="bill">
+            <select id="currency">
+                <option value="₹">₹ INR</option>
+                <option value="$">$ USD</option>
+                <option value="€">€ EUR</option>
+                <option value="£">£ GBP</option>
+            </select>
+
+            <label for = "bill-amount"> Bill Amount</label>
+            <input id = "bill-amount" type = "number" 
+            placeholder="Enter bill amount"
+            >
+
+        </div>
+
+        <div class="tip-section">
+            <p>Select Tip Percentage</p>
+        
+        <div class="tip-buttons">
+            <button type="button" class="tip-btn" data-tip="10">10%</button>
+            <button type="button" class="tip-btn" data-tip="15">15%</button>
+            <button type="button" class="tip-btn" data-tip="20">20%</button>
+        </div>
+
+            <label for="custom-tip">Custom Tip %</label>
+            <input id="custom-tip" type="number"
+                placeholder="Enter custom tip %"
+            >
+
+        </div>
+
+        <div class="people-section">
+            <label for = "people"> Number of people </label>
+            <input id="people" type = "number"
+            placeholder="Enter the number of people contributing"
+            >
+         </div>
+
+
+
+    </section>
+</body>
