@@ -11,6 +11,12 @@ const personResult = document.querySelector("#person-result");
 
 const resetButton = document.querySelector(".reset-btn");
 
+const billError = document.querySelector("#bill-error");
+
+const tipError = document.querySelector("#tip-error");
+
+const peopleError = document.querySelector("#people-error");
+
 let selectedTip = 0;
 
 function updateResults() {
@@ -25,12 +31,42 @@ function updateResults() {
         tipPercent = customTip;
     }
 
-    if (bill <= 0 || people <= 0 || tipPercent < 0) {
-        tipResult.textContent = `${currency}0.00`;
-        totalResult.textContent = `${currency}0.00`;
-        personResult.textContent = `${currency}0.00`;
-        return;
+        billError.textContent = "";
+        tipError.textContent = "";
+        peopleError.textContent = "";
+
+        const billIsEmpty = billInput.value === "";
+        const tipIsEmpty = customTipInput.value === "" && selectedTip === 0;
+        const peopleIsEmpty = peopleInput.value === "";
+
+        let hasError = false;
+
+        if (!billIsEmpty && bill <= 0) {
+            billError.textContent = "Bill amount must be greater than 0.";
+            hasError = true;
+        }
+
+        if (!tipIsEmpty && tipPercent < 0) {
+        tipError.textContent = "Tip percentage cannot be negative.";
+        hasError = true;
     }
+
+    if (!tipIsEmpty && tipPercent > 100) {
+        tipError.textContent = "Tip percentage cannot be more than 100%.";
+        hasError = true;
+    }
+
+        if (!peopleIsEmpty && people <= 0) {
+            peopleError.textContent = "Number of people must be at least 1.";
+            hasError = true;
+        }
+
+        if (billIsEmpty || peopleIsEmpty || hasError) {
+            tipResult.textContent = `${currency}0.00`;
+            totalResult.textContent = `${currency}0.00`;
+            personResult.textContent = `${currency}0.00`;
+            return;
+        }
 
     const tipAmount = bill * tipPercent / 100;
     const grandTotal = bill + tipAmount;
@@ -77,6 +113,10 @@ resetButton.addEventListener("click", function() {
     peopleInput.value = "";
     currencySelect.value = "₹";
     selectedTip = 0;
+
+    billError.textContent = "";
+    tipError.textContent = "";
+    peopleError.textContent = "";
 
     tipButtons.forEach(function(button) {
         button.classList.remove("active");

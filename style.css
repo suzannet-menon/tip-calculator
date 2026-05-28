@@ -74,7 +74,7 @@ h1 {
 }
 
 label,
-.tip-section p {
+.tip-section > p {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
@@ -158,9 +158,11 @@ select:focus {
     background: #374151;
 }
 
-.error {
+p.error {
     margin-top: 6px;
+    margin-bottom: 0;
     font-size: 14px;
+    font-weight: 400;
     color: #dc2626;
 }
 
