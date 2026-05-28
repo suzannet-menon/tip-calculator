@@ -56,10 +56,11 @@ function updateResults() {
         hasError = true;
     }
 
-        if (!peopleIsEmpty && people <= 0) {
-            peopleError.textContent = "Number of people must be at least 1.";
-            hasError = true;
-        }
+        if (!peopleIsEmpty && !Number.isInteger(people)) {
+        peopleError.textContent = "Number of people must be a whole number.";
+        hasError = true;
+    }
+        
 
         if (billIsEmpty || peopleIsEmpty || hasError) {
             tipResult.textContent = `${currency}0.00`;
